@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<project name="MMI-CCS" default="compile" basedir=".">
+  <!-- set global properties for this build -->
+  <property name="src" value="."/>  
+  <property name="build" value="build"/>
+  <property name="CXC"  value="CXC"/>  
+  <property name="CAX"  value="CAX"/>
+  <property name="javadoc" value="javadoc"/>
+  
+  <target name="init">
+    <tstamp/>
+    <mkdir dir="${build}"/>  
+  </target>  
+  
+  <target name="compile" depends="init">
+    <javac debug="on" srcdir="${src}" destdir="${build}"/>
+  </target>
+  
+  <target name="jar" depends="compile">
+  </target>
+  
+  <target name="javadoc">
+    <mkdir dir="${javadoc}"/>
+    <exec executable="do_javadoc" output="javadoc_build.log">
+      <arg line="${src} ${javadoc}"/>
+    </exec>
+  </target>
+
+  <target name="CAX">
+  </target>
+  
+  <target name="CXC" depends="compile,jar">
+  </target>
+  
+  <target name="clean">
+    <delete dir="${build}"/>
+    <delete dir="${CAX}"/>
+    <delete dir="${CXC}"/>
+  </target>
+  
+</project>

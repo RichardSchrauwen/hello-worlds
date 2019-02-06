@@ -44,20 +44,20 @@
 						} catch (Exception e) {
 							log.error("SMS_ENCODING_STANDARD not defined - using 0 as default.");
 						}
-						SMSWelcomeProcessor[] smsWelcomeProcessor = new SMSWelcomeProcessor[fileArray.length];
+						SMSProcessor[] smsProcessor = new SMSProcessor[fileArray.length];
 						for (int i=fileArray.length-1;i>=0;i--) {
 							log.debug("Collector>  MSISDN File to set: " + (String)fileArray[i]);
 							log.debug("Collector>  bindRetries="+bindRetries+",SMSCbindDelay="+SMSCbindDelay+",smsMessage="+smsMessage+",smsEncoding="+smsEncoding);
-							smsWelcomeProcessor [i] = new SMSWelcomeProcessor(PROPS);
-							smsWelcomeProcessor [i].init(bindRetries,SMSCbindDelay,smsMessage,smsEncoding);
-							smsWelcomeProcessor [i].setMsisdnFile((String)fileArray[i]);
+							smsProcessor [i] = new SMSProcessor(PROPS);
+							smsProcessor [i].init(bindRetries,SMSCbindDelay,smsMessage,smsEncoding);
+							smsProcessor [i].setMsisdnFile((String)fileArray[i]);
 						}
 
 						// Start threads one by one
 						for (int i=fileArray.length-1;i>=0;i--) {
 							log.info("Start processing file: " + (String)fileArray[i]);
-							smsWelcomeProcessor [i].run();
-							smsWelcomeProcessor [i].disconnectSMSC();
+							smsProcessor [i].run();
+							smsProcessor [i].disconnectSMSC();
 							log.debug("Collector>  Processor finished. Thread ends.");
 						}
 					}

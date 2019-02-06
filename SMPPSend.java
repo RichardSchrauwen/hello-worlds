@@ -1,7 +1,7 @@
-/* send msisdn's by SMSWelcomeProcessor
+/* Code block to send sms to a set of msisdn's by SMSProcessor */
 				try {
 					// new SMS
-					log.debug("Collector>  FIXME: Add here the sending of SMS message");
+					log.debug("Collector>  Add here the sending of SMS message");
 
 					// Input Operator logfile given
 					TreeMap msisdnFileMap=new TreeMap();

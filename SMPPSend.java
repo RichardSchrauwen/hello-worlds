@@ -7,6 +7,7 @@
 					TreeMap msisdnFileMap=new TreeMap();
 					msisdnFileMap.put(new Integer(0), "examplemsisdnlist.txt");
 
+					// expects text file with MSIDN numbers
 					String msisdnFileList="";
 					Object[] fileArray=msisdnFileMap.values().toArray();
 

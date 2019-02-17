@@ -1,5 +1,5 @@
-# hello-worlds
-Collection of example go-to code in various programming languages
+# hello-worlds & other sample code
+Collection of my go-to code in various programming languages. Will always be a work in progress...
 
 ## the go way
 Run golang: go run main.go

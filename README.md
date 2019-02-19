@@ -11,6 +11,9 @@ Build: go build
 Install binary: go install
 
 ## the java legacy
+Install Java SDK
+
+Open a command prompt and execute: javac ./Verzameld.java
 
 ## the Python track
 

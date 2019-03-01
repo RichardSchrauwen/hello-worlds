@@ -18,4 +18,8 @@ Open a command prompt and execute: javac ./Verzameld.java
 ## the Python track
 
 
+## lambda functions
+
+AWS function-as-a-service
+
 # Sending SMS

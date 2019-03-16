@@ -23,3 +23,5 @@ Open a command prompt and execute: javac ./Verzameld.java
 AWS function-as-a-service
 
 # Sending SMS
+
+Code snippet for sending an SMS message usingn the SMPP v3.4 protocol

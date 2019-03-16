@@ -18,7 +18,7 @@ public class Verzameld {
 		try {
 			initLog();
 			log.log( Level.FINER, "Start logging to file.");
-			System.out.println("Verzameld werk start");
+			System.out.println("Start of the Verzameld class with collection of helper functions");
 			// FileWriter writes characters to file
 			System.out.println("Type timestamp UNIX Epoch" );
 			String s = new BufferedReader(new InputStreamReader (System.in)).readLine();
@@ -105,7 +105,7 @@ public class Verzameld {
 
 		}
 
-		// write the PID in the lockfile
+		// write the process Id ( PID ) in the lockfile to have a unique name for the lock
 		String lockFile = "lock.txt";
 		int pid = 22;
 		String spid = String.valueOf(pid);

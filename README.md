@@ -17,10 +17,16 @@ Open a command prompt and execute: javac ./Verzameld.java
 
 ## the Python track
 
+TODO
 
-## lambda functions
+## AWS Lambda functions
 
 AWS function-as-a-service
+
+## Azure Webapp
+
+Azure App Service web application (Java WAR file)
+TODO
 
 # Sending SMS
 

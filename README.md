@@ -31,3 +31,7 @@ TODO
 # Sending SMS
 
 Code snippet for sending an SMS message usingn the SMPP v3.4 protocol
+
+## Kubernetes
+
+yaml file with a load-balanced helloworld example

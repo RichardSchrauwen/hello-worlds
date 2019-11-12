@@ -38,6 +38,11 @@ Code snippet for sending a Hello SMS message usingn the SMPP v3.4 protocol
 
 yaml file with a load-balanced helloworld example
 
+## Docker
+Dockerfile with hello world text in a clean directory
+
+run: sudo docker build .
+
 ## AWK
 One of my first scripting languages for text processing
 

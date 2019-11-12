@@ -1,5 +1,5 @@
 # hello-worlds & other sample code
-Collection of my go-to code in various programming languages. Will always be a work in progress...
+Collection of the basic code in various programming languages. Will always be a work in progress...
 
 ## the go way
 Run golang: go run main.go
@@ -32,8 +32,13 @@ TODO
 
 # Sending SMS
 
-Code snippet for sending an SMS message usingn the SMPP v3.4 protocol
+Code snippet for sending a Hello SMS message usingn the SMPP v3.4 protocol
 
 ## Kubernetes
 
 yaml file with a load-balanced helloworld example
+
+## AWK
+One of my first scripting languages for text processing
+
+Open a *NIX command prompt and execute: echo "AWK World!" | awk -f hello.awk

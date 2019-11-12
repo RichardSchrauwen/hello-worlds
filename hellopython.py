@@ -19,3 +19,10 @@ print('Floating point numbers: %10.2f' %(13.144))
 print('This is a string with {} insert'.format(x))
 
 print(f"He said he wants {y}.")
+
+def hello_func(param1='Python'):
+    """
+    Docstring goes here.
+    """
+    print("Hello {}!".format(param1))
+hello_func("World")

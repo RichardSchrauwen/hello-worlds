@@ -25,4 +25,4 @@ def hello_func(param1='Python'):
     Docstring goes here.
     """
     print("Hello {}!".format(param1))
-hello_func("World")
+hello_func("World function")

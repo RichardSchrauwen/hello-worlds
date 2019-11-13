@@ -1,14 +1,21 @@
+![GitHub last commit](https://img.shields.io/github/last-commit/richardschrauwen/hello-worlds?style=plastic)
+
 # hello-worlds & other sample code
 Collection of the basic code in various programming languages. Will always be a work in progress...
 
 ## the go way
-Run golang: go run main.go
+Run hello world: 
+```golang
+go run hello.go
+```
 
-Testing: go test
+other:
 
-Build: go build
+* Testing: go test
 
-Install binary: go install
+* Build: go build
+
+* Install binary: go install
 
 ## the java legacy
 Install Java SDK

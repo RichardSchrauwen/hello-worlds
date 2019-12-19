@@ -30,14 +30,10 @@ Open a command prompt and execute: python hellopython.py
 ## AWS Lambda functions
 AWS function-as-a-service
 
-TODO
-
 ## Azure Webapp
 Azure App Service web application (Java WAR file)
 
-TODO
-
-# Sending SMS
+## Sending SMS
 
 Code snippet for sending a Hello SMS message usingn the SMPP v3.4 protocol
 

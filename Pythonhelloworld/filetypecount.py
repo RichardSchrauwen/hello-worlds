@@ -22,8 +22,8 @@ if "$USER" in myPath:
     print(f"Path to use = {myPath}")
 
 # count all files
-#file_count = sum((len(f) for _, _, f in os.walk(myPath)))
-#print("Total file count = {}".format(file_count))
+file_count = sum((len(f) for _, _, f in os.walk(myPath)))
+print("Total file count = {}".format(file_count))
 
 # count a specific file_extension type
 string_count = 0

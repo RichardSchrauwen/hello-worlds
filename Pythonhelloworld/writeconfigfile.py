@@ -9,5 +9,8 @@ config['mp3count']['path'] = 'C:/users/$USER/Music'
 config['mp3count']['mediatypes'] = 'mp3,mp4,jpg,mpeg'
 config['mp3count']['searchString'] = "Gork"
 
+config['filetypecount'] = {}
+config['filetypecount']['path'] = 'C:/users/$USER/Documents'
+
 with open('example.ini', 'w') as configfile:
     config.write(configfile)

@@ -15,6 +15,7 @@ config.read('example.ini')
 myPath = config['filetypecount']['path']
 searchExtension = config['filetypecount']['searchExtension']
 searchString = config['filetypecount']['searchString']
+
 #print(f"searchString = '{searchString}'")
 
 # check if username needs to be replaced with the OS username
@@ -23,6 +24,7 @@ if "$USER" in myPath:
     print(f"Path to use = {myPath}")
 
 # count a specific file extension type and how many times the searchString is present
+
 string_count = 0
 extension_count = 0
 other_count = 0

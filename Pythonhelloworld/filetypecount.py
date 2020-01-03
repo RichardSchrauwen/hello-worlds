@@ -24,7 +24,7 @@ if "$USER" in myPath:
 
 # count all files
 file_count = sum((len(f) for _, _, f in os.walk(myPath)))
-print("Total file count sanity check = {}\n".format(file_count))
+print("Total file count sanity check for {0} = {1}\n".format(myPath, file_count))
 
 string_count = 0
 extension_count = 0

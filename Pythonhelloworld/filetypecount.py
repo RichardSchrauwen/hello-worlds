@@ -15,7 +15,6 @@ config.read('example.ini')
 myPath = config['filetypecount']['path']
 searchExtension = config['filetypecount']['searchExtension']
 searchString = config['filetypecount']['searchString']
-
 #print(f"searchString = '{searchString}'")
 
 # check if username needs to be replaced with the OS username
@@ -25,7 +24,7 @@ if "$USER" in myPath:
 
 # count all files
 file_count = sum((len(f) for _, _, f in os.walk(myPath)))
-print("Total file count = {}".format(file_count))
+print("Total file count sanity check = {}\n".format(file_count))
 
 string_count = 0
 extension_count = 0
@@ -44,6 +43,6 @@ for root, dirs, files in os.walk(myPath):
 
 # print results
 file_count = extension_count + other_count
-print("file count : {0} + {1} (other) = {2}".format(extension_count, other_count, file_count))
+print("file count : {0} (ext) + {1} (other) = {2}".format(extension_count, other_count, file_count))
 print("file count with extension '{0}' = {1}".format(searchExtension, extension_count))
 print("file count containing '{0}' = {1}".format(searchString, string_count))

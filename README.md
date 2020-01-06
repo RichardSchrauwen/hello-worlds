@@ -4,7 +4,7 @@
 Collection of the basic code in various programming languages. Will always be a work in progress...
 
 ## the go way
-Run hello world: 
+Run hello world:
 ```golang
 go run hello.go
 ```
@@ -20,7 +20,7 @@ other:
 ## the java legacy
 Install Java SDK
 
-Open a command prompt and execute: javac ./Verzameld.java
+Open a command prompt and execute: javac ./Hello.java
 
 ## the Python track
 Install Python 3
@@ -30,12 +30,8 @@ Open a command prompt and execute: python hellopython.py
 ## AWS Lambda functions
 AWS function-as-a-service
 
-## Azure Webapp
+## Azure Webapp (Java)
 Azure App Service web application (Java WAR file)
-
-## Sending SMS
-
-Code snippet for sending a Hello SMS message usingn the SMPP v3.4 protocol
 
 ## Kubernetes
 
@@ -49,4 +45,14 @@ run: sudo docker build .
 ## AWK
 One of my first scripting languages for text processing
 
-Open a *NIX command prompt and execute: echo "AWK World!" | awk -f hello.awk
+Open a \*NIX command prompt and execute: echo "AWK World!" | awk -f hello.awk
+
+## Other Python utilities
+
+Open a command prompt and execute:
+
+python .\\filesize.py -d C:\\temp -l 2048
+
+## Other Java: Sending SMS and SimpleFormatter
+
+Code snippet for sending a Hello SMS message using the SMPP v3.4 protocol

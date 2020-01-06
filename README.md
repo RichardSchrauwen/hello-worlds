@@ -11,11 +11,11 @@ go run hello.go
 
 other:
 
-* Testing: go test
+* Testing: `go test`
 
-* Build: go build
+* Build: `go build`
 
-* Install binary: go install
+* Install binary: `go install`
 
 ## the java legacy
 Install Java SDK
@@ -29,7 +29,7 @@ java Hello
 ## the Python track
 Install Python 3
 
-Open a command prompt and execute: python hellopython.py
+Open a command prompt and execute: `python hellopython.py`
 
 ## AWS Lambda functions
 AWS function-as-a-service
@@ -53,10 +53,21 @@ Open a \*NIX command prompt and execute: echo "AWK World!" | awk -f hello.awk
 
 ## Other Python utilities
 
-Open a command prompt and execute:
+Open a command prompt in the directory where the scripts are.
 
-python .\\filesize.py -d C:\\temp -l 2048
+```
+cd hello-worlds/Pythonhelloworld
+```
+Usage examples:
 
-## Other Java: Sending SMS and SimpleFormatter
+```
+python .\filesize.py -d C:\temp -l 2048
+
+python .\filefind.py -n java -d C:\ProgramData\Oracle
+```
+
+## Other Java: Sending SMS and more
 
 Code snippet for sending a Hello SMS message using the SMPP v3.4 protocol
+
+Verzameld.java contains a collection of functions

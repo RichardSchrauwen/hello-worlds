@@ -37,22 +37,20 @@ for root, dirs, files in os.walk(mypath):
         else:
             d[file_extension] = 1
 
-# print the results
-#print(f"totals per extension: {d.items()}")
+# Sort the results
 sorted_d = sorted(d.items(), key=lambda kv: kv[1], reverse=True)
-print(f"sorted totals per extension: {sorted_d}")
+print(f"sorted totals per extension: {sorted_d[:top]}")
 
+# print the top n, now with print formatting and alighment
 print(f"path = {mypath} checking for top {top} file extensions")
 i = 0
 for f in sorted_d:
     if i < top:
         i += 1
-        print(f"#{i}    {f}  ")
+        print(f"#{i}    {f[0]:{10}}   {f[1]:{10}} ")
 
-# some calculations
-print(f"total number of files: {sum(d.values())}")
-
-
+# other calculations
+print(f"total number of files in this path: {sum(d.values())}")
 end = datetime.datetime.now()
 delta = end - start
 #print(delta)

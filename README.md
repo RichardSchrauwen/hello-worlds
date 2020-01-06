@@ -20,10 +20,11 @@ other:
 ## the java legacy
 Install Java SDK
 
-Open a command prompt and execute: 
-```javac
+Open a command prompt and execute:
+```java
+cd .\Javahelloworld\
 javac ./Hello.java
-java ./Hello.class
+java Hello
 ```
 ## the Python track
 Install Python 3

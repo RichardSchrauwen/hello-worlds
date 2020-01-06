@@ -3,6 +3,7 @@ from os import listdir
 from os.path import isfile, join
 import datetime
 from argparse import ArgumentParser
+import collections
 
 # command line parameters
 parser = ArgumentParser()
@@ -41,7 +42,10 @@ for root, dirs, files in os.walk(mypath):
 sorted_d = sorted(d.items(), key=lambda kv: kv[1], reverse=True)
 print(f"sorted totals per extension: {sorted_d[:top]}")
 
-# print the top n, now with print formatting and alighment
+# optionally put the results in a sorted dictionary
+sorted_dict = collections.OrderedDict(sorted_d)
+
+# print the top n, now with some print formatting and alighment
 print(f"path = {mypath} checking for top {top} file extensions")
 i = 0
 for f in sorted_d:
@@ -49,7 +53,7 @@ for f in sorted_d:
         i += 1
         print(f"#{i}    {f[0]:{10}}   {f[1]:{10}} ")
 
-# other calculations
+# other calculations: totals and speed test
 print(f"total number of files in this path: {sum(d.values())}")
 end = datetime.datetime.now()
 delta = end - start

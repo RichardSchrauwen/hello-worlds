@@ -53,10 +53,17 @@ Open a \*NIX command prompt and execute: echo "AWK World!" | awk -f hello.awk
 
 ## Other Python utilities
 
-Open a command prompt and execute:
+Open a command prompt in the directory where the scripts are:
 
-python .\\filesize.py -d C:\\temp -l 2048
+Usage:
+
+```python
+python .\filesize.py -d C:\temp -l 2048
+
+python .\filefind.py -n java -d C:\ProgramData\Oracle
+```
 
 ## Other Java: Sending SMS and SimpleFormatter
+
 
 Code snippet for sending a Hello SMS message using the SMPP v3.4 protocol

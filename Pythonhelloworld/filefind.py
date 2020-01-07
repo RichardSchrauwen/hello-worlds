@@ -5,7 +5,7 @@ from argparse import ArgumentParser
 parser = ArgumentParser()
 parser.add_argument("-d", "--dir", dest="directory",
                     help="The directory to read", metavar="DIR")
-parser.add_argument("-n", "--name", dest="name",
+parser.add_argument("-n", "--name", nargs="+", dest="name",
                     help="file name or part of it", metavar="NAME")
 parser.add_argument("-q", "--quiet",
                     action="store_false", dest="verbose", default=True,
@@ -18,8 +18,11 @@ if args.directory != None:
     dir_path = args.directory
 
 # get the file name from command line
-if args.name != None:
-    name = args.name
+name = args.name[0]
+if name == None:
+    print("Oops, no file name was entered. Please use '-n <name>' arg.")
+    system.exit()
+
 print(f"In '{dir_path}' looking for file containing '{name}'")
 
 # go through all files
@@ -27,4 +30,4 @@ for r, d, f in os.walk(dir_path):
     for file in f:
         if name and name in file:
             file_path = os.path.join(r,file)
-            print(f"file path {file_path}")
+            print(f"Found under file path {file_path}")

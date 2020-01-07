@@ -38,3 +38,4 @@ for e in enrollments:
 
 print(f"Total rows {enrollment_num_rows}")
 print(f"Unique rows {len(enrollment_num_unique_students)}")
+print(f"Enrolled are: {enrollment_num_unique_students}")

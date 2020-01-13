@@ -58,12 +58,24 @@ Open a command prompt in the directory where the scripts are.
 ```
 cd hello-worlds/Pythonhelloworld
 ```
-Usage examples:
+Usage examples below
+
+Example code to read or write a comma separated value file and present as dictionaries
+```
+python .\csvreader.py
+python .\csvwriter.py
+```
+
+Find files containing (part of) the input string 
 
 ```
-python .\filesize.py -d C:\temp -l 2048
-
 python .\filefind.py -n java -d C:\ProgramData\Oracle
+```
+
+Find files larger than a size limit (bytes) in current dir or other input dir
+```
+python .\filesize.py -d C:\temp -l 1024
+
 ```
 
 ## Other Java: Sending SMS and more

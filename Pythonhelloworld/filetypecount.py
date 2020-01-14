@@ -9,7 +9,7 @@ from os.path import isfile, join
 user = os.getlogin()
 #print(user)
 
-# get path and searchString from the config file
+# get path and searchString from the INI config file
 config = configparser.ConfigParser()
 config.read('example.ini')
 myPath = config['filetypecount']['path']
@@ -24,7 +24,7 @@ if "$USER" in myPath:
 
 # count all files
 file_count = sum((len(f) for _, _, f in os.walk(myPath)))
-print("Total file count sanity check for {0} = {1}\n".format(myPath, file_count))
+print("Total file count for {0} = {1}\n".format(myPath, file_count))
 
 string_count = 0
 extension_count = 0
@@ -43,6 +43,6 @@ for root, dirs, files in os.walk(myPath):
 
 # print results
 file_count = extension_count + other_count
-print("file count : {0} (ext) + {1} (other) = {2}".format(extension_count, other_count, file_count))
-print("file count with extension '{0}' = {1}".format(searchExtension, extension_count))
+print("file count : {0} ({3}) + {1} (other) = {2}".format(extension_count, other_count, file_count, searchExtension))
+#print("file count with extension '{0}' = {1}".format(searchExtension, extension_count))
 print("file count containing '{0}' = {1}".format(searchString, string_count))

@@ -72,11 +72,28 @@ Find files containing (part of) the input string
 python .\filefind.py -n java -d C:\ProgramData\Oracle
 ```
 
-Find files larger than a size limit (bytes) in current dir or other input dir
+Find files larger than a size limit (bytes) in current dir or other path
 ```
 python .\filesize.py -d C:\temp -l 1024
 
 ```
+
+Count number of files of certain extension type in a path. Takes parameters from INI config file.
+```
+python .\filetypecount.py
+
+```
+
+Find files larger than a size Limit (bytes) and Extension type in a Dir.
+
+Use `-e *` for all file types
+
+```
+python .\listfilesandsavetofile.py -d C:\temp -l 1024 -e .csv
+
+```
+
+
 
 ## Other Java: Sending SMS and more
 

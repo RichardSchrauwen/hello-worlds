@@ -19,15 +19,18 @@ mypath = "."
 if args.directory != None:
     mypath = args.directory
 
-# get the extension from command line (default is empty)
+# get the extension from command line (default is empty, Wildcard is * for any extension.)
 myext = ""
 if args.extension != None:
     myext = args.extension
 
-# get the limit from command line (default is 0 kB)
+# get the limit from command line (default is 0 byte, ignore negative values)
 limit = 0
 if args.limit != None and args.limit > 0:
     limit = args.limit
+
+# output file
+myfiles = "myfiles.txt"
 
 print(f"Checking for file type '{myext}' above limit {limit} bytes in {mypath}")
 
@@ -44,7 +47,8 @@ def file_bytesize(file_path):
         return b
 
 # list all files and send output to a file if conditions match
-with open("myfiles.txt", "w", encoding="utf-8") as filewrite:
+nr_files = 0
+with open(myfiles, "w", encoding="utf-8") as filewrite:
     # recursively walk the way through my path
     for root, dirs, files in os.walk(mypath):
         for file in files:
@@ -57,13 +61,19 @@ with open("myfiles.txt", "w", encoding="utf-8") as filewrite:
                         if size != None and size > limit:
                             #print(f"file size {size:{10}} > {limit} bytes for {file}")
                             filewrite.write(f"{file_path},{size}\n")
+                            nr_files += 1
                     else:
                         filewrite.write(f"{os.path.join(root, file)}\n")
+                        nr_files += 1
             else:
                 if limit > 0:
                     file_path = os.path.join(root, file)
                     size = file_bytesize(file_path)
                     if size != None and size > limit:
                         filewrite.write(f"{file_path},{size}\n")
+                        nr_files += 1
                 else:
                     filewrite.write(f"{os.path.join(root, file)}\n")
+                    nr_files += 1
+
+print(f"Written {nr_files} file names in {myfiles}")

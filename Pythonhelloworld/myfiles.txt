@@ -1,11 +1,1 @@
-C:\users\etmrisc\Documents\GitHub\hello-worlds\Pythonhelloworld\csvreader.py
-C:\users\etmrisc\Documents\GitHub\hello-worlds\Pythonhelloworld\filefind.py
-C:\users\etmrisc\Documents\GitHub\hello-worlds\Pythonhelloworld\filesize.py
-C:\users\etmrisc\Documents\GitHub\hello-worlds\Pythonhelloworld\filetypecount.py
-C:\users\etmrisc\Documents\GitHub\hello-worlds\Pythonhelloworld\hellopython.py
-C:\users\etmrisc\Documents\GitHub\hello-worlds\Pythonhelloworld\listallfiles.py
-C:\users\etmrisc\Documents\GitHub\hello-worlds\Pythonhelloworld\listfilesandsavetofile.py
-C:\users\etmrisc\Documents\GitHub\hello-worlds\Pythonhelloworld\mp3count.py
-C:\users\etmrisc\Documents\GitHub\hello-worlds\Pythonhelloworld\numberoffiles.py
-C:\users\etmrisc\Documents\GitHub\hello-worlds\Pythonhelloworld\parseconfigfile.py
-C:\users\etmrisc\Documents\GitHub\hello-worlds\Pythonhelloworld\writeconfigfile.py
+C:\temp\Encoding Time.csv,3401396

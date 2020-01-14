@@ -1,8 +1,8 @@
 import os
 from os import listdir
 from os.path import isfile, join
-import time
 from argparse import ArgumentParser
+import time
 
 # command line parameters
 parser = ArgumentParser()

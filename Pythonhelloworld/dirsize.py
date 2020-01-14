@@ -6,8 +6,8 @@ from collections import Counter
 parser = ArgumentParser()
 parser.add_argument("-d", "--dir", dest="directory",
                     help="The directory to read", metavar="DIR")
-parser.add_argument("-l", "--limit", dest="limit", type=int,
-                    help="file size limit in bytes", metavar="LIMIT")
+parser.add_argument("-n", "--top_n", dest="top_n", type=int,
+                    help="Top n of biggest directories", metavar="TOP")
 parser.add_argument("-q", "--quiet",
                     action="store_false", dest="verbose", default=True,
                     help="don't print status messages to stdout")
@@ -49,17 +49,27 @@ dir_path = "."
 if args.directory != None:
     dir_path = args.directory
 
-# get the limit from command line (default is 1 kB)
-limit = 1024
-if args.limit != None:
-    limit = args.limit
-print(f"dir_path = {dir_path} checking for limit {limit}")
+# get the top N (default is 1)
+top_n = "1"
+if args.top_n != None:
+    top_n = args.top_n
 
-# go through all files
+# go through all files and sum the file sizes
+dir_counter = Counter()
+file_count = 0
 for root, dirs, files in os.walk(dir_path):
     for file in files:
+        file_count += 1
         file_path = os.path.join(root,file)
         size = file_bytesize(file_path)
-        if size != None and size > limit:
-            print(f"file size {size:{9}} > {limit} bytes for {file}")
-            #print(f"root= {root}, dir= {dirs}")
+        dir_counter[root] += size
+
+# totals per Directory
+total_sum = sum(dir_counter.values())
+print(f"Total size for path = {convert_bytes(total_sum)} ({total_sum} bytes) in {file_count} files.")
+
+# Top n
+print(f"Top {top_n}")
+biggest_dirs = dir_counter.most_common(top_n)
+for item in biggest_dirs:
+    print(f"{convert_bytes(item[1]):20} {item[0]}")

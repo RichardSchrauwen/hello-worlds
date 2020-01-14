@@ -1,5 +1,6 @@
 import os
 from argparse import ArgumentParser
+import time
 
 # command line parameters
 parser = ArgumentParser()
@@ -9,6 +10,8 @@ parser.add_argument("-e", "--ext", dest="extension",
                     help="The extenstion type to look for. Wildcard is * for any extension.", metavar="EXT")
 parser.add_argument("-l", "--limit", dest="limit", type=int,
                     help="The max file size limit in bytes. Default is 0.", metavar="LIMIT")
+parser.add_argument("-o", "--out", dest="output",
+                    help="The output file name. Default is myfiles.txt.", metavar="OUT")
 parser.add_argument("-q", "--quiet",
                     action="store_false", dest="verbose", default=True,
                     help="don't print status messages to stdout")
@@ -31,6 +34,8 @@ if args.limit != None and args.limit > 0:
 
 # output file
 myfiles = "myfiles.txt"
+if args.output != None:
+    myfiles = args.output
 
 print(f"Checking for file type '{myext}' above limit {limit} bytes in {mypath}")
 
@@ -47,6 +52,7 @@ def file_bytesize(file_path):
         return b
 
 # list all files and send output to a file if conditions match
+start = time.time()
 nr_files = 0
 with open(myfiles, "w", encoding="utf-8") as filewrite:
     # recursively walk the way through my path
@@ -77,3 +83,6 @@ with open(myfiles, "w", encoding="utf-8") as filewrite:
                     nr_files += 1
 
 print(f"Written {nr_files} file names in {myfiles}")
+
+elapsed_time = int(time.time() - start)
+print("elapsed_time: {}".format(elapsed_time))

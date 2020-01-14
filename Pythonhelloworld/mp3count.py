@@ -14,6 +14,8 @@ config = configparser.ConfigParser()
 config.read('example.ini')
 myPath = config['mp3count']['path']
 #print(myPath)
+# get a searchString from the config file
+searchString = config['mp3count']['searchString']
 
 # check if username needs to be replaced with the OS username
 if "$USER" in myPath:
@@ -74,13 +76,12 @@ for root, dirs, files in os.walk(myPath):
 media_count = mp3_count + jpg_count + m4a_count + other_count
 print("MP3/JPG/M4A/Other file count = {0} + {1} + {2} + {3} = {4}".format(mp3_count, jpg_count, m4a_count, other_count, media_count))
 
-# get a searchString from the config file
-searchString = config['mp3count']['searchString']
+
 arr_txt = [x for x in os.listdir(myPath) if searchString in x]
 print("Directories containing '{}' = {}".format(searchString, arr_txt))
 
 # searchString
-print("File names containing '{}' : {}".format(searchString, hit_count))
+print("Number of files containing '{}' : {}".format(searchString, hit_count))
 
 #x = [os.path.join(r,file) for r,d,f in os.walk(myPath) for file in f if file.endswith(".au")]
 #print(x)

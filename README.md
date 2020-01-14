@@ -4,6 +4,8 @@
 Collection of the basic code in various programming languages. Will always be a work in progress...
 
 ## the go way
+Prerequisites: install golang
+
 Run hello world:
 ```golang
 go run hello.go
@@ -18,7 +20,7 @@ other:
 * Install binary: `go install`
 
 ## the java legacy
-Install Java SDK
+Prerequisites: Install Java SDK
 
 Open a command prompt and execute:
 ```java
@@ -27,29 +29,35 @@ javac ./Hello.java
 java Hello
 ```
 ## the Python track
-Install Python 3
+Prerequisites: Install Python 3
 
 Open a command prompt and execute: `python hellopython.py`
 
 ## AWS Lambda functions
+Prerequisites: Amazon account
+
 AWS function-as-a-service
 
 ## Azure Webapp (Java)
+Prerequisites: Azure account
+
 Azure App Service web application (Java WAR file)
 
 ## Kubernetes
+Prerequisites: install Kubernetes and start cluster
 
 yaml file with a load-balanced helloworld example
 
 ## Docker
-Dockerfile with hello world text in a clean directory
+Prerequisites: install Docker
 
-run: sudo docker build .
+Place the Dockerfile with hello world text in a clean directory and run: 
+`sudo docker build .`
 
 ## AWK
-One of my first scripting languages for text processing
+One of my first scripting languages for text processing together with sed
 
-Open a \*NIX command prompt and execute: echo "AWK World!" | awk -f hello.awk
+Open a \*NIX command prompt and execute: `echo "AWK World!" | awk -f hello.awk`
 
 ## Other Python utilities
 
@@ -72,19 +80,25 @@ Find files containing (part of) the input string
 python .\filefind.py -n java -d C:\ProgramData\Oracle
 ```
 
-Find files larger than a size limit (bytes) in current dir or other path
+Find all files larger than a threshold size **l**imit (bytes) in a **d**ir.
 ```
 python .\filesize.py -d C:\temp -l 1024
 
 ```
 
-Count number of files of certain extension type in a path. Takes parameters from INI config file.
+Count number of files of certain extension type in a path. Takes its parameters from INI config file *Example.ini*. If present it replaces the keyword $USER with the OS login name, which is handy for a path containing the user name.
 ```
 python .\filetypecount.py
 
 ```
 
-Find files larger than a size Limit (bytes) and Extension type in a Dir.
+Lists all files in a in a **d**ir and outputs to screen. 
+```
+python .\listallfiles.py
+
+```
+
+Find files larger than a threshold size **l**imit (bytes) and **e**xtension type in a **d**ir and output to file for offline analysis.
 
 Use `-e *` for all file types
 

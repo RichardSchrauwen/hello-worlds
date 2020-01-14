@@ -50,7 +50,7 @@ if args.directory != None:
     dir_path = args.directory
 
 # get the top N (default is 1)
-top_n = "1"
+top_n = 1
 if args.top_n != None:
     top_n = args.top_n
 

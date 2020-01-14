@@ -74,8 +74,12 @@ python .\csvreader.py
 python .\csvwriter.py
 ```
 
-Find files containing (part of) the input string 
+List the total size of a path and the top N largest directories under it.
+```
+python .\dirsize.py -d C:\ProgramData -n 10
+```
 
+Find files containing (part of) the input string
 ```
 python .\filefind.py -n java -d C:\ProgramData\Oracle
 ```
@@ -86,7 +90,7 @@ python .\filesize.py -d C:\temp -l 1024
 
 ```
 
-Count number of files of certain extension type in a path. Takes its parameters from INI config file *Example.ini*. If present it replaces the keyword $USER with the OS login name, which is handy for a path containing the user name.
+Count number of files of certain extension type in a path. Takes its parameters from INI config file *Example.ini*. If present it replaces the keyword *$USER* with the OS login name, which is handy for a path containing the user name.
 ```
 python .\filetypecount.py
 
@@ -107,7 +111,29 @@ python .\listfilesandsavetofile.py -d C:\temp -l 1024 -e .csv
 
 ```
 
+MP3Count - media file statistics.  Takes its parameters from INI config file *Example.ini*. If present it replaces the keyword *$USER* with the OS login name, which is handy for a path containing the user name.
+```
+python .\mp3count.py
 
+```
+
+Number of files - Analyses the file types in a path.
+```
+python .\numberoffiles.py
+
+```
+
+Parse config files - Read a config file in INI format. Takes its parameters from INI config file *Example.ini*.
+```
+python .\parseconfigfile.py
+
+```
+
+Write config files - Create a config file in INI format. Creates parameters in INI config file *Example.ini*.
+```
+python .\writeconfigfile.py
+
+```
 
 ## Other Java: Sending SMS and more
 

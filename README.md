@@ -6,6 +6,12 @@ Collection of the basic code in various programming languages. Will always be a 
 ## the go way
 Prerequisites: install golang
 
+E.g. Ubuntu:
+
+`sudo apt-get update`
+
+`sudo apt install golang-go`
+
 Run hello world:
 ```golang
 go run hello.go
@@ -46,7 +52,22 @@ Azure App Service web application (Java WAR file)
 ## Kubernetes
 Prerequisites: install Kubernetes and start cluster
 
-yaml file with a load-balanced helloworld example
+*hello-application.yaml* is a yaml file with a load-balanced helloworld example from:
+https://kubernetes.io/docs/tasks/access-application-cluster/service-access-application-cluster/
+
+```
+cd K8helloworld/
+sudo kubectl apply -f ./hello-application.yaml
+sudo kubectl expose deployment hello-world --type=NodePort --name=example-service
+sudo kubectl describe services example-service
+```
+
+Note down the *NodePort:* TCP port number from the response e.g. **31941**
+
+Do a HTTP request to localhost if you are working locally
+
+`curl http://localhost:31941`
+
 
 ## Docker
 Prerequisites: install Docker

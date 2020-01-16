@@ -61,5 +61,5 @@ for root, dirs, files in os.walk(dir_path):
         file_path = os.path.join(root,file)
         size = file_bytesize(file_path)
         if size != None and size > limit:
-            print(f"file size {size:{9}} > {limit} bytes for {file}")
+            print(f"file size {size:{9}} > {limit} bytes for {file_path}")
             #print(f"root= {root}, dir= {dirs}")

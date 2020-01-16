@@ -62,7 +62,8 @@ for root, dirs, files in os.walk(dir_path):
         file_count += 1
         file_path = os.path.join(root,file)
         size = file_bytesize(file_path)
-        dir_counter[root] += size
+        if size != None:
+            dir_counter[root] += size
 
 # totals per Directory
 total_sum = sum(dir_counter.values())

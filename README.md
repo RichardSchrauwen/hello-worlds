@@ -12,18 +12,25 @@ E.g. Ubuntu:
 
 `sudo apt install golang-go`
 
-Run hello world:
+Run hello world (compiles the application into a temporary folder and starts the executable binary. It properly cleans up the temporary files):
 ```golang
+cd Gohelloworld/
 go run hello.go
 ```
 
-other:
+Other usefull commands:
+
+* Build the command in package 'main' and leave the result in the current working directory as a binary executable:
+ 
+`go build`
+
+* Install binary to build the command in a temporary directory and then move it to $GOPATH/bin: 
+
+`go install`
 
 * Testing: `go test`
 
-* Build: `go build`
-
-* Install binary: `go install`
+* Cleaning: `go clean`
 
 ## the java legacy
 Prerequisites: Install Java SDK

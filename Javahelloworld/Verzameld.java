@@ -16,32 +16,25 @@ public class Verzameld {
 
 	public static void main( String[] args) {
 		try {
+			System.out.println("Start of the Verzameld class with collection of helper functions");
 			initLog();
 			log.log( Level.FINER, "Start logging to file.");
-			System.out.println("Start of the Verzameld class with collection of helper functions");
-			// FileWriter writes characters to file
-			System.out.println("Type a timestamp in UNIX Epoch format. If nothing entered current time will be taken." );
-			long time = System.currentTimeMillis();
-			String s = null;
-			try {
-				s = new BufferedReader(new InputStreamReader (System.in)).readLine();
-				time = Long.parseLong(s);
+			if (args.length > 0) {
+				switch(args[0]) {
+					case "all": allFunctions();
+						break;
+					default: System.out.println("Not a valid choice " + args[0]);
+				}
 			}
-			catch (NumberFormatException nfe) {
-				 String numberAsString = String.format("%,d", time);
-				 System.out.println("No valid input found. Current #milliseconds since 1970: " + numberAsString );
-			}
-			String date = convertUnixTimeToDate(time);
-			System.out.println("Time: " + date);
 		}
 		catch (Exception e) {
-			System.out.println("Verzameld werk exception: " + e);
+			System.out.println("Verzameld exception: " + e);
 		}
 	}
 
     public static void initLog(){
 		try {
-			fh=new FileHandler("./test.log", true);
+			fh=new FileHandler("./run.log", true);
 		} catch (SecurityException | IOException e) {
 			e.printStackTrace();
 		}
@@ -50,12 +43,17 @@ public class Verzameld {
     	log.setLevel(Level.FINEST);
     }
 
-	public void allFunctions() throws Exception {
+  public static void allFunctions() throws Exception {
+		fileOperations();
+		dirOperations();
+	}
+
+  public static void fileOperations() throws Exception {
 		// Create and delete a file
-		File xFile = new File("x.txt");
+		File xFile = new File("x.file");
 		xFile.createNewFile();
 		if (xFile.exists()) {
-			System.out.println("File exists");
+			System.out.println("File " + xFile + " exists.");
 			String type = xFile.isFile() ? "File " : "Directory ";
 			String name = xFile.getCanonicalPath();
 			long leng = xFile.length();
@@ -64,7 +62,9 @@ public class Verzameld {
 			System.out.println("File notexists");
 		}
 		xFile.delete();
+	}
 
+  public static void dirOperations() throws Exception {
 		// Display current dir
 		String currydir = System.getProperty("user.dir");
 		System.out.println("Current dir = "+currydir);
@@ -73,22 +73,55 @@ public class Verzameld {
 		for (int i=1; i<fileList.length; i++)
 			System.out.println(" "+fileList[i]);
 
+		// create dir and file
 		File tmpDir = new File("temp");
 		tmpDir.mkdir();
-		File newFile = new File(tmpDir+"/xxx.txt");
+		File newFile = new File(tmpDir+"/userinput.txt");
 		if ( !newFile.exists() || !newFile.canRead()) {
-			System.out.println("Can't read this file "+newFile );
+			System.out.println("Can't access file "+newFile+ ", will create it." );
 			newFile.createNewFile();
 		}
 
 		// FileWriter writes characters to file
 		System.out.println("Type something" );
 		String s = new BufferedReader(new InputStreamReader (System.in)).readLine();
-		File out = new File(tmpDir+"/output.txt");
-		FileWriter fw = new FileWriter (out);
-		PrintWriter pw = new PrintWriter(fw);
-		pw.println(s);
-		fw.close();
+		//File newFile = new File(tmpDir+"/output.txt");
+		// FileWriter fw = new FileWriter (newFile);
+		// PrintWriter pw = new PrintWriter(fw, true);
+		// pw.append(""+ convertUnixTimeToDate(System.currentTimeMillis())+"> "+s);
+		// pw.close();
+		// fw.close();
+
+		FileWriter fr = new FileWriter(newFile, true);
+		fr.write(convertUnixTimeToDate(System.currentTimeMillis())+"> "+s+"\n");
+		fr.close();
+
+		// try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(newFile, true)))) {
+    //   out.println("the text");
+		// }catch (IOException e) {
+    //   System.err.println(e);
+		// }
+	}
+
+	public static void convertTime() throws Exception {
+		// Ask for a Unix Time and convert to a date
+		System.out.println("Type a timestamp in UNIX Epoch format. If nothing entered current time will be taken." );
+		long time = System.currentTimeMillis();
+		String userinput = null;
+		try {
+			userinput = new BufferedReader(new InputStreamReader (System.in)).readLine();
+			time = Long.parseLong(userinput);
+		}
+		catch (NumberFormatException nfe) {
+			 String numberAsString = String.format("%,d", time);
+			 System.out.println("No valid input found. Current #milliseconds since 1970: " + numberAsString );
+		}
+		String date = convertUnixTimeToDate(time);
+		System.out.println("Time: " + date);
+	}
+
+
+	public static void waitFunction() throws Exception {
 
 		// "wait a moment" stops the app and waits for a return on the command line
 		while (true) {

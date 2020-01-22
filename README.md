@@ -18,19 +18,19 @@ cd Gohelloworld/
 go run hello.go
 ```
 
-Other usefull commands:
+Other useful commands:
 
 * Build the command in package 'main' and leave the result in the current working directory as a binary executable:
  
 `go build`
 
-* Install binary to build the command in a temporary directory and then move it to $GOPATH/bin: 
+and run the executable with:
 
-`go install`
+`./hello`
 
-* Testing: `go test`
+* Cleaning up:
 
-* Cleaning: `go clean`
+`go clean`
 
 ## the java legacy
 Prerequisites: Install Java SDK

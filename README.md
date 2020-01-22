@@ -54,7 +54,14 @@ AWS function-as-a-service
 ## Azure Webapp (Java)
 Prerequisites: Azure account
 
-Azure App Service web application (Java WAR file)
+Azure App Service is a fully managed web application hosting platform as a service (PaaS).
+
+A web application *HelloWorld* can be run from a .WAR file, following Azure tuturial:
+https://docs.microsoft.com/en-gb/azure/app-service/containers/quickstart-java
+
+To start the resulting Azure App Service web application (Java WAR file) use the URL resulting from the deploy step. E.g.
+https://helloworld-1579689050889.azurewebsites.net/
+
 
 ## Kubernetes
 Prerequisites: install Kubernetes and start cluster

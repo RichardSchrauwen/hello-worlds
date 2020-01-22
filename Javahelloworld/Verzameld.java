@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class Verzameld {
-	
+
 	private static final Logger log = Logger.getLogger( Verzameld.class.getName() );
 	private static FileHandler fh = null;
 
@@ -20,11 +20,19 @@ public class Verzameld {
 			log.log( Level.FINER, "Start logging to file.");
 			System.out.println("Start of the Verzameld class with collection of helper functions");
 			// FileWriter writes characters to file
-			System.out.println("Type timestamp UNIX Epoch" );
-			String s = new BufferedReader(new InputStreamReader (System.in)).readLine();
-			long time = Long.parseLong(s);
+			System.out.println("Type a timestamp in UNIX Epoch format. If nothing entered current time will be taken." );
+			long time = System.currentTimeMillis();
+			String s = null;
+			try {
+				s = new BufferedReader(new InputStreamReader (System.in)).readLine();
+				time = Long.parseLong(s);
+			}
+			catch (NumberFormatException nfe) {
+				 String numberAsString = String.format("%,d", time);
+				 System.out.println("No valid input found. Current #milliseconds since 1970: " + numberAsString );
+			}
 			String date = convertUnixTimeToDate(time);
-			System.out.println("Time was: " + date);
+			System.out.println("Time: " + date);
 		}
 		catch (Exception e) {
 			System.out.println("Verzameld werk exception: " + e);
@@ -33,7 +41,7 @@ public class Verzameld {
 
     public static void initLog(){
 		try {
-			fh=new FileHandler("C:\\tmp\\test.log", true);
+			fh=new FileHandler("./test.log", true);
 		} catch (SecurityException | IOException e) {
 			e.printStackTrace();
 		}
@@ -41,7 +49,7 @@ public class Verzameld {
     	log.addHandler(fh);
     	log.setLevel(Level.FINEST);
     }
-    
+
 	public void allFunctions() throws Exception {
 		// Create and delete a file
 		File xFile = new File("x.txt");
@@ -56,7 +64,7 @@ public class Verzameld {
 			System.out.println("File notexists");
 		}
 		xFile.delete();
-		
+
 		// Display current dir
 		String currydir = System.getProperty("user.dir");
 		System.out.println("Current dir = "+currydir);
@@ -64,7 +72,7 @@ public class Verzameld {
 		String [] fileList = currentdir.list();
 		for (int i=1; i<fileList.length; i++)
 			System.out.println(" "+fileList[i]);
-		
+
 		File tmpDir = new File("temp");
 		tmpDir.mkdir();
 		File newFile = new File(tmpDir+"/xxx.txt");
@@ -81,12 +89,12 @@ public class Verzameld {
 		PrintWriter pw = new PrintWriter(fw);
 		pw.println(s);
 		fw.close();
-		
+
 		// "wait a moment" stops the app and waits for a return on the command line
 		while (true) {
 			System.out.println("Please press enter to continue");
 			char c = (char)System.in.read();
-			if (c == '\n') {     
+			if (c == '\n') {
 				break;
 			}
 		}
@@ -128,20 +136,20 @@ public class Verzameld {
 //			}
 //		}
 	}
-	
+
 	static public String convertUnixTimeToDate(long time){
 	    java.util.Date date = new Date(time);
-	    Format format = new SimpleDateFormat("yyyy MM dd HH:mm:ss");
+	    Format format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	    return format.format(date);
 	}
-	
+
 
 	static public String[] runCommand(String cmd)
 		throws IOException {
 
 		// set up list to capture command output lines
 
-		ArrayList list = new ArrayList();
+		ArrayList<String> mylist = new ArrayList<>();
 
 		// start command running
 
@@ -158,7 +166,7 @@ public class Verzameld {
 
 		String str;
 		while ((str = br.readLine()) != null)
-			list.add(str);
+			mylist.add(str);
 
 		// wait for command to terminate
 
@@ -180,6 +188,6 @@ public class Verzameld {
 
 		// return list of strings to caller
 
-		return (String[])list.toArray(new String[0]);
+		return (String[])mylist.toArray(new String[0]);
 	}
 }

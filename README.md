@@ -1,4 +1,5 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/richardschrauwen/hello-worlds?style=plastic)
+ and   ![hello-worlds](https://img.shields.io/github/repo-size/richardschrauwen/hello-worlds?style=plastic)
 
 # hello-worlds & other sample code
 Collection of the basic code in various programming languages. Will always be a work in progress...
@@ -66,7 +67,8 @@ https://docs.microsoft.com/en-gb/azure/app-service/containers/quickstart-java
 
 To start the resulting Azure App Service web application (Java WAR file) use the URL resulting from the deploy step. E.g.
 https://helloworld-1579689050889.azurewebsites.net/
-https://img.shields.io/website?url=https%3A%2F%2Fhelloworld-1579689050889.azurewebsites.net%2F
+
+![website status](https://img.shields.io/website?down_message=down&style=flat-square&up_color=green&up_message=up&url=https%3A%2F%2Fhelloworld-1579689050889.azurewebsites.net%2F)
 
 ## Kubernetes
 Prerequisites: install Kubernetes and start cluster

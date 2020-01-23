@@ -47,9 +47,14 @@ Prerequisites: Install Python 3
 Open a command prompt and execute: `python hellopython.py`
 
 ## AWS Lambda functions
-Prerequisites: Amazon account
+Prerequisites: Amazon (free) account
 
-AWS function-as-a-service
+AWS function-as-a-service. AWS Lambda is a compute service that lets you run code without provisioning or managing servers.
+
+Following tutorial:
+https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html
+
+Testing can be done in many ways. Easiest is to use the Lambda console directly.
 
 ## Azure Webapp (Java)
 Prerequisites: Azure account
@@ -61,7 +66,7 @@ https://docs.microsoft.com/en-gb/azure/app-service/containers/quickstart-java
 
 To start the resulting Azure App Service web application (Java WAR file) use the URL resulting from the deploy step. E.g.
 https://helloworld-1579689050889.azurewebsites.net/
-
+https://img.shields.io/website?url=https%3A%2F%2Fhelloworld-1579689050889.azurewebsites.net%2F
 
 ## Kubernetes
 Prerequisites: install Kubernetes and start cluster

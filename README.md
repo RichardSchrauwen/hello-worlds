@@ -2,7 +2,7 @@
  and   ![hello-worlds](https://img.shields.io/github/repo-size/richardschrauwen/hello-worlds?style=plastic)
 
 # hello-worlds & other sample code
-Collection of the basic code in various programming languages. Will always be a work in progress...
+Collection of the basic code in various programming languages I use / have used. Will always be a work in progress and in no way a complete collection of all helloworlds in the world.
 
 ## the go way
 Prerequisites: install golang
@@ -56,6 +56,19 @@ Following tutorial:
 https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html
 
 Testing can be done in many ways. Easiest is to use the Lambda console directly.
+
+## AWS CLI and Python SDK (Boto3)
+
+Use the Python3 SDK for AWS (boto3) to use an AWS message queue, following tutorial:
+https://boto3.amazonaws.com/v1/documentation/api/latest/guide/sqs.html
+
+List all available SQS queues
+
+create a new one if needed ('Test')
+
+send a hello message
+
+retrieve the message
 
 ## Azure Webapp (Java)
 Prerequisites: Azure account

@@ -24,3 +24,9 @@ def upload_file(file_name, bucket, object_name=None):
         logging.error(e)
         return False
     return True
+
+file_name = "test1.jpg"
+bucket = "pictures-to-analyze"
+print(f"Upload file {file_name} to bucket {bucket}")
+if (upload_file(file_name, bucket)):
+    print("success")

@@ -48,27 +48,25 @@ Prerequisites: Install Python 3
 Open a command prompt and execute: `python hellopython.py`
 
 ## AWS Lambda functions
-Prerequisites: Amazon (free) account
+Prerequisites: Amazon Web Services (free) account
 
 AWS function-as-a-service. AWS Lambda is a compute service that lets you run code without provisioning or managing servers.
 
 Following tutorial:
 https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html
 
-Testing can be done in many ways. Easiest is to use the Lambda console directly.
+Testing can be done in many ways. Easiest is to use the AWS Lambda console directly. Another one I tried is API Gateway, which is more costly because API endpoint uptime is charged.
 
 ## AWS CLI and Python SDK (Boto3)
 
 Use the Python3 SDK for AWS (boto3) to use an AWS message queue, following tutorial:
 https://boto3.amazonaws.com/v1/documentation/api/latest/guide/sqs.html
 
-List all available SQS queues
-
-create a new one if needed ('Test')
-
-send a hello message
-
-retrieve the message
+Some simple scripts to:
+* List all available SQS queues `python3 aws-listSQSqueues`
+* Create a new one if needed ('Test') `python3 aws-createSQSqueue`
+* Send a new hello message to the queue `python3 aws-sendSQSmessage`
+* Retrieve the message and remove from queue `python3 aws-processSQSmessage`
 
 ## Azure Webapp (Java)
 Prerequisites: Azure account

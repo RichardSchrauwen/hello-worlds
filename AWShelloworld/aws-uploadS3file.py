@@ -1,5 +1,6 @@
 import logging
 import boto3
+import sys
 from botocore.exceptions import ClientError
 from argparse import ArgumentParser
 

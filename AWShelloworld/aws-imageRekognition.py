@@ -2,6 +2,7 @@
 #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
 
 import boto3
+import sys
 from argparse import ArgumentParser
 
 # command line parameters

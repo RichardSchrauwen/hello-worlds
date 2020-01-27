@@ -2,7 +2,7 @@
  and   ![hello-worlds](https://img.shields.io/github/repo-size/richardschrauwen/hello-worlds?style=plastic)
 
 # hello-worlds & other sample code
-Collection of the basic code in various programming languages. Will always be a work in progress...
+Collection of the basic code in various programming languages I use / have used. Will always be a work in progress and in no way a complete collection of all helloworlds in the world.
 
 ## the go way
 Prerequisites: install golang
@@ -48,14 +48,25 @@ Prerequisites: Install Python 3
 Open a command prompt and execute: `python hellopython.py`
 
 ## AWS Lambda functions
-Prerequisites: Amazon (free) account
+Prerequisites: Amazon Web Services (free) account
 
 AWS function-as-a-service. AWS Lambda is a compute service that lets you run code without provisioning or managing servers.
 
 Following tutorial:
 https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html
 
-Testing can be done in many ways. Easiest is to use the Lambda console directly.
+Testing can be done in many ways. Easiest is to use the AWS Lambda console directly. Another one I tried is API Gateway, which is more costly because API endpoint uptime is charged.
+
+## AWS CLI and Python SDK (Boto3)
+
+Use the Python3 SDK for AWS (boto3) to use an AWS message queue, following tutorial:
+https://boto3.amazonaws.com/v1/documentation/api/latest/guide/sqs.html
+
+Some simple scripts to:
+* List all available SQS queues `python3 aws-listSQSqueues`
+* Create a new one if needed ('Test') `python3 aws-createSQSqueue`
+* Send a new hello message to the queue `python3 aws-sendSQSmessage`
+* Retrieve the message and remove from queue `python3 aws-processSQSmessage`
 
 ## Azure Webapp (Java)
 Prerequisites: Azure account

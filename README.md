@@ -1,5 +1,6 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/richardschrauwen/hello-worlds?style=plastic)
  and   ![hello-worlds](https://img.shields.io/github/repo-size/richardschrauwen/hello-worlds?style=plastic)
+ and ![GitHub All Releases](https://img.shields.io/github/downloads/RichardSchrauwen/hello-worlds/total?style=plastic)
 
 # hello-worlds & other sample code
 Collection of the basic code in various programming languages I use / have used. Will always be a work in progress and in no way a complete collection of all helloworlds in the world.

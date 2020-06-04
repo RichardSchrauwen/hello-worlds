@@ -23,7 +23,7 @@ go run hello.go
 Other useful commands:
 
 * Build the command in package 'main' and leave the result in the current working directory as a binary executable:
- 
+
 `go build`
 
 and run the executable with:
@@ -44,13 +44,18 @@ javac ./Hello.java
 java Hello
 ```
 
-Tip for windows: hold <SHIFT> and right-click on a directory in Explorer to show the extended context menu options.
-Open PowerShell window here or Open Linux shell here 
+Tip! for windows:
+
+> hold <SHIFT> and right-click on a directory in Explorer to show the extended context menu options.
+
+> Open PowerShell window here or Open Linux shell here
 
 ## Hello World - the Python trail
 Prerequisites: Install Python 3
 
-Open a command prompt and execute: `python hellopython.py`
+Windows: Open a command prompt and execute: `python hellopython.py`
+
+Linux: Open a shell and execute: `python3 hellopython.py`
 
 ## Hello World - AWS Lambda functions
 Prerequisites: Amazon Web Services (free) account
@@ -109,7 +114,7 @@ Do a HTTP request to localhost if you are working locally
 ## Hello World - Docker
 Prerequisites: install Docker
 
-Place the Dockerfile with hello world text in a clean directory and run: 
+Place the Dockerfile with hello world text in a clean directory and run:
 `sudo docker build .`
 
 ## Hello World - AWK
@@ -154,7 +159,7 @@ python .\filetypecount.py
 
 ```
 
-Lists all files in a in a **d**ir and outputs to screen. 
+Lists all files in a in a **d**ir and outputs to screen.
 ```
 python .\listallfiles.py
 

@@ -5,7 +5,7 @@
 # hello-worlds & other sample code
 Collection of the basic code in various programming languages I use / have used. Will always be a work in progress and in no way a complete collection of all helloworlds in the world.
 
-## the go way
+## Hello World - the go way
 Prerequisites: install golang
 
 E.g. Ubuntu:
@@ -34,7 +34,7 @@ and run the executable with:
 
 `go clean`
 
-## the java legacy
+## Hello World - the java legacy
 Prerequisites: Install Java SDK
 
 Open a command prompt and execute:
@@ -43,12 +43,16 @@ cd .\Javahelloworld\
 javac ./Hello.java
 java Hello
 ```
-## the Python track
+
+Tip for windows: hold <SHIFT> and right-click on a directory in Explorer to show the extended context menu options.
+Open PowerShell window here or Open Linux shell here 
+
+## Hello World - the Python trail
 Prerequisites: Install Python 3
 
 Open a command prompt and execute: `python hellopython.py`
 
-## AWS Lambda functions
+## Hello World - AWS Lambda functions
 Prerequisites: Amazon Web Services (free) account
 
 AWS function-as-a-service. AWS Lambda is a compute service that lets you run code without provisioning or managing servers.
@@ -58,7 +62,7 @@ https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.htm
 
 Testing can be done in many ways. Easiest is to use the AWS Lambda console directly. Another one I tried is API Gateway, which is more costly because API endpoint uptime is charged.
 
-## AWS CLI and Python SDK (Boto3)
+## Hello World - AWS CLI and Python SDK (Boto3)
 
 Use the Python3 SDK for AWS (boto3) to use an AWS message queue, following tutorial:
 https://boto3.amazonaws.com/v1/documentation/api/latest/guide/sqs.html
@@ -69,7 +73,7 @@ Some simple scripts to:
 * Send a new hello message to the queue `python3 aws-sendSQSmessage`
 * Retrieve the message and remove from queue `python3 aws-processSQSmessage`
 
-## Azure Webapp (Java)
+## Hello World - Azure Webapp (Java)
 Prerequisites: Azure account
 
 Azure App Service is a fully managed web application hosting platform as a service (PaaS).
@@ -82,7 +86,7 @@ https://helloworld-1579689050889.azurewebsites.net/
 
 ![website status](https://img.shields.io/website?down_message=down&style=flat-square&up_color=green&up_message=up&url=https%3A%2F%2Fhelloworld-1579689050889.azurewebsites.net%2F)
 
-## Kubernetes
+## Hello World - Kubernetes
 Prerequisites: install Kubernetes and start cluster
 
 *hello-application.yaml* is a yaml file with a load-balanced helloworld example from:
@@ -102,13 +106,13 @@ Do a HTTP request to localhost if you are working locally
 `curl http://localhost:31941`
 
 
-## Docker
+## Hello World - Docker
 Prerequisites: install Docker
 
 Place the Dockerfile with hello world text in a clean directory and run: 
 `sudo docker build .`
 
-## AWK
+## Hello World - AWK
 One of my first scripting languages for text processing together with sed
 
 Open a \*NIX command prompt and execute: `echo "AWK World!" | awk -f hello.awk`

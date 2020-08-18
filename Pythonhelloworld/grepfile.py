@@ -30,10 +30,16 @@ searchpattern = args.grep
 print(f"In '{dir_path}' looking in file '{name}' for '{searchpattern}'")
 
 # grep
+mypattern = re.compile(searchpattern)
+linenr = 0
 with open(args.name) as origin_file:
     for line in origin_file:
-        found = re.findall(r(searchpattern), line)
-        if found:
-            print(f"Match:: {line}")
+        linenr += 1
+        match = mypattern.search(line)
+        if match:
+            result = mypattern.split(line)
+            print(result[1])
+            #print(f"Match on line nr. {linenr} = {match[0]}")
+            #print(f"Result = {result}")
             #line = line[0].split('"')[1]
             #print(line)

@@ -1,3 +1,4 @@
+C:\Users\etmrisc\daily\and\daily\sprint.txt
 C:\AdaptivaCache\SmsPkg$P05004AE#15\#\Policy\Win10\Local_Script\Windows_10\audit.csv,1934
 C:\AdaptivaCache\SmsPkg$P05004AE#15\#\Policy\Win10\{53F16D3F-0D2E-45DA-BDA7-D2AA0AE9A2AE}\DomainSysvol\GPO\Machine\microsoft\windows nt\Audit\audit.csv,1934
 C:\AdaptivaCache\SmsPkg$P05004AE#15\#\Policy\Win7\Security Templates\VSG\Vista Default Audit.csv,4917

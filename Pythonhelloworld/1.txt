@@ -1,0 +1,22 @@
+ = args.grep
+
+}'")
+
+ = re.compile(search
+.search(line)
+
+.split(line)
+
+ = "<type>"
+
+ = args.grep
+
+ = re.compile(search
+}'")
+
+.search(line)
+
+.split(line)
+
+}. Output to {myfiles}")
+
